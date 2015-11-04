@@ -22,9 +22,6 @@ if [ "$(uname)" == "Darwin" ]; then
   fi
 fi
 
-# Run tests
-bats test/*.bats
-
 # Install extra stuff
 if [ -d "$EXTRA_DIR" -a -f "$EXTRA_DIR/install.sh" ]; then
   . "$EXTRA_DIR/install.sh"
