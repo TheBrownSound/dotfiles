@@ -31,10 +31,6 @@
 [push]
 	default = tracking
 
-[github]
-	user = TheBrownSound
-	token = 9b67fc28bcb0009ca5bc983cc5fdf5ea
-
 [credential]
 	helper = cache
 [filter "hawser"]
