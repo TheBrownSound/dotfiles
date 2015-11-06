@@ -1,3 +1,7 @@
+if [ -f ~/.bashrc ]; then
+  source ~/.bashrc
+fi
+
 #Git Helpers
 function parse_git_dirty {
   git diff --quiet HEAD &>/dev/null
