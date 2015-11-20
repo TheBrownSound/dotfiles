@@ -1,46 +1,49 @@
 [core]
-	editor = vim
-	excludesfile = /Users/Jarad/.gitignore_global
+  editor = vim
+  excludesfile = ~/.gitignore_global
 
 [alias]
-	st = status
-	br = branch
-	d = difftool
-	ci = commit -v
-	cia = commit -v -a
-	co = checkout
-	cp = cherry-pick
-	l = log
-	ll = log -p
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	lf = log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-	lm = log master..
-	llm = log -p master..
-	put = push -u origin HEAD
+  st = status
+  br = branch
+  d = difftool
+  ci = commit -v
+  cia = commit -v -a
+  co = checkout
+  cp = cherry-pick
+  l = log
+  ll = log -p
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lf = log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lm = log master..
+  llm = log -p master..
+  put = push -u origin HEAD
 
 [color]
-	branch = auto
-	diff = auto
-	status = auto
-	interactive = auto
+  branch = auto
+  diff = auto
+  status = auto
+  interactive = auto
 
 [user]
-	name = Jarad Comingdeer
-	email = jarad@jcomingdeer.com
+  name = Jarad Comingdeer
+  email = jarad@jcomingdeer.com
 
 [push]
-	default = tracking
+  default = current
 
 [credential]
-	helper = cache
+  helper = cache
+
 [filter "hawser"]
-	clean = git hawser clean %f
-	smudge = git hawser smudge %f
-	required = true
+  clean = git hawser clean %f
+  smudge = git hawser smudge %f
+  required = true
 
 [diff]
-	tool = vimdiff
+  tool = vimdiff
+
 [difftool]
-	prompt = false
+  prompt = false
+
 [mergetool]
-	keepBackup = false
+  keepBackup = false
