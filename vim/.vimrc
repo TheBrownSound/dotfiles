@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'flazz/vim-colorschemes'          " All the colors!
 Plugin 'kien/ctrlp.vim'                  " Fuzzy Finder
+Plugin 'christoomey/vim-tmux-navigator'  " vim/tmux pane navigation
 Plugin 'nathanaelkane/vim-indent-guides' " Indent Guides
 Plugin 'scrooloose/syntastic'            " Linting
 Plugin 'bronson/vim-trailing-whitespace' " Trailing Whitespace
