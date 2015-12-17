@@ -2,6 +2,9 @@ if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
 
+#Prevent flow control from messing up tmux prefix (ctrl-s)
+stty -ixon
+
 #Git Helpers
 function parse_git_dirty {
   git diff --quiet HEAD &>/dev/null
