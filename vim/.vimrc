@@ -15,6 +15,8 @@ Plugin 'christoomey/vim-tmux-navigator'  " vim/tmux pane navigation
 Plugin 'nathanaelkane/vim-indent-guides' " Indent Guides
 Plugin 'scrooloose/syntastic'            " Linting
 Plugin 'bronson/vim-trailing-whitespace' " Trailing Whitespace
+Plugin 'tpope/vim-repeat'                " Repeat Command Helper
+Plugin 'tpope/vim-surround'              " Surround Helper
 
 " Languages
 Plugin 'slim-template/vim-slim'          " Slim
