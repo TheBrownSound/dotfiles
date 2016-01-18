@@ -17,6 +17,7 @@ Plugin 'scrooloose/syntastic'            " Linting
 Plugin 'bronson/vim-trailing-whitespace' " Trailing Whitespace
 
 " Languages
+Plugin 'slim-template/vim-slim'          " Slim
 Plugin 'groenewege/vim-less'             " Less
 Plugin 'tpope/vim-markdown'              " Markdown
 Plugin 'pangloss/vim-javascript'         " Javascript
