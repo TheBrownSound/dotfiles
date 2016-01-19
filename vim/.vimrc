@@ -17,6 +17,7 @@ Plugin 'scrooloose/syntastic'            " Linting
 Plugin 'bronson/vim-trailing-whitespace' " Trailing Whitespace
 Plugin 'tpope/vim-repeat'                " Repeat Command Helper
 Plugin 'tpope/vim-surround'              " Surround Helper
+Plugin 'tpope/vim-fugitive'              " Vim Git Wrapper
 
 " Languages
 Plugin 'slim-template/vim-slim'          " Slim
