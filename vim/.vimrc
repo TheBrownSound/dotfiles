@@ -9,22 +9,25 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Plugins
-Plugin 'flazz/vim-colorschemes'          " All the colors!
-Plugin 'kien/ctrlp.vim'                  " Fuzzy Finder
-Plugin 'christoomey/vim-tmux-navigator'  " vim/tmux pane navigation
-Plugin 'nathanaelkane/vim-indent-guides' " Indent Guides
-Plugin 'scrooloose/syntastic'            " Linting
-Plugin 'bronson/vim-trailing-whitespace' " Trailing Whitespace
-Plugin 'tpope/vim-repeat'                " Repeat Command Helper
-Plugin 'tpope/vim-surround'              " Surround Helper
-Plugin 'tpope/vim-fugitive'              " Vim Git Wrapper
+Plugin 'flazz/vim-colorschemes'           " All the colors!
+Plugin 'kien/ctrlp.vim'                   " Fuzzy Finder
+Plugin 'christoomey/vim-tmux-navigator'   " vim/tmux pane navigation
+Plugin 'nathanaelkane/vim-indent-guides'  " Indent Guides
+Plugin 'scrooloose/syntastic'             " Linting
+Plugin 'bronson/vim-trailing-whitespace'  " Trailing Whitespace
+Plugin 'tpope/vim-repeat'                 " Repeat Command Helper
+Plugin 'tpope/vim-surround'               " Surround Helper
+Plugin 'tpope/vim-fugitive'               " Git Wrapper
+Plugin 'tpope/vim-commentary'             " Commenting
 
 " Languages
-Plugin 'slim-template/vim-slim'          " Slim
-Plugin 'groenewege/vim-less'             " Less
-Plugin 'tpope/vim-markdown'              " Markdown
-Plugin 'pangloss/vim-javascript'         " Javascript
-Plugin 'mxw/vim-jsx'                     " JSX
+Plugin 'slim-template/vim-slim'           " Slim
+Plugin 'groenewege/vim-less'              " Less
+Plugin 'tpope/vim-markdown'               " Markdown
+Plugin 'pangloss/vim-javascript'          " Javascript
+Plugin 'mxw/vim-jsx'                      " JSX
+Plugin 'mustache/vim-mustache-handlebars' " Handlebars
+Plugin 'digitaltoad/vim-jade'             " Jade
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -37,6 +40,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_jade_checkers = ['jade_lint']
 
 " Files/Directories to ignore
 set wildignore+=*.git,*.swp,*.zip,.DS_Store
@@ -67,7 +71,7 @@ set number
 
 " Colors
 set t_Co=256
-syntax on
+syntax enable
 set background=dark
-colorscheme iceberg
+colorscheme solarized
 
