@@ -5,6 +5,7 @@
 [alias]
   st = status
   br = branch
+  df = diff
   d = difftool
   ci = commit -v
   cia = commit -v -a
@@ -14,6 +15,7 @@
   ll = log -p
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lf = log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lfm = log --pretty=format:'%Cred%h%Creset - %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --no-merges
   lm = log master..
   llm = log -p master..
   put = push -u origin HEAD
@@ -32,7 +34,7 @@
   default = current
 
 [credential]
-  helper = cache
+  helper = osxkeychain
 
 [filter "hawser"]
   clean = git hawser clean %f
