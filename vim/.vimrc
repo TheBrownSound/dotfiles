@@ -11,6 +11,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Plugins
 Plugin 'flazz/vim-colorschemes'           " All the colors!
 Plugin 'kien/ctrlp.vim'                   " Fuzzy Finder
+Plugin 'itchyny/lightline.vim'            " Vim Status bar
 Plugin 'christoomey/vim-tmux-navigator'   " vim/tmux pane navigation
 Plugin 'nathanaelkane/vim-indent-guides'  " Indent Guides
 Plugin 'scrooloose/syntastic'             " Linting
@@ -35,12 +36,25 @@ filetype plugin indent on    " required
 " Plugin Settings
 let g:ctrlp_show_hidden = 2
 
+let g:lightline = {
+  \ 'colorscheme': 'solarized',
+  \ }
+
+" Syntastic settings
 let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_loc_list_height=5
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_ruby_checkers = ['rubocop']
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_jade_checkers = ['jade_lint']
+
+" Enable syntax for custom filetypes
+augroup filetype
+  autocmd! BufRead,BufNewFile *.hdbs set filetype=handlebars
+  autocmd! BufRead,BufNewFile .env* set filetype=sh
+augroup END
 
 " Files/Directories to ignore
 set wildignore+=*.git,*.swp,*.zip,.DS_Store
@@ -50,8 +64,8 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-set noswapfile                              " Don't create annoying *.swp files
-set laststatus=2                            " Always show status bar
+set noswapfile   " Don't create annoying *.swp files
+set laststatus=2 " Always show status bar
 
 " Indent settings
 set shiftwidth=2
@@ -65,9 +79,10 @@ set shortmess+=I
 " (uBB is right double angle, uB7 is middle dot)
 exec "set lcs=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 
-" Line Numbers!
+" Line Numbers and length!
 set relativenumber
 set number
+set colorcolumn=80
 
 " Colors
 set t_Co=256
