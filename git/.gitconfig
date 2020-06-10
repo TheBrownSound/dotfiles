@@ -27,8 +27,8 @@
   interactive = auto
 
 [user]
-  name = Jarad Comingdeer
-  email = jarad@jcomingdeer.com
+	name = Jarad Comingdeer
+	email = jarad@jcomingdeer.com
 
 [push]
   default = current

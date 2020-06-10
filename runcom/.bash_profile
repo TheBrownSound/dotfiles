@@ -9,6 +9,25 @@ fi
 #Prevent flow control from messing up tmux prefix (ctrl-s)
 stty -ixon
 
+# Fastlane
+export PATH="$HOME/.fastlane/bin:$PATH"
+
+# Android Dev
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator
+
+# react-native
+function rn-clean() {
+    watchman watch-del-all
+    rm -rf $TMPDIR/react-*
+    rm -rf $TMPDIR/haste-*
+    rm -rf $TMPDIR/metro-*
+    npm start -- --reset-cache
+}
+
 #Git Helpers
 function parse_git_dirty {
   git diff --quiet HEAD &>/dev/null
