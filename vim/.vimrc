@@ -22,6 +22,7 @@ Plugin 'tpope/vim-repeat'                   " Repeat Command Helper
 Plugin 'tpope/vim-surround'                 " Surround Helper
 Plugin 'tpope/vim-fugitive'                 " Git Wrapper
 Plugin 'tpope/vim-commentary'               " Commenting
+Plugin 'prettier/vim-prettier'              " Prettier
 Plugin 'alvan/vim-closetag'                 " HTML tag completion
 Plugin 'tmux-plugins/vim-tmux-focus-events' " Tmux focus events
 
@@ -37,9 +38,12 @@ Plugin 'digitaltoad/vim-jade'             " Jade
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-" Plugin Settings
+" CtrlP Files/Directories to ignore
 let g:ctrlp_show_hidden = 2
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tmp|swp|zip|DS_Store)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir' : '\v[\/](node_modules|dist|tmp|vendor|dist)$'
+  \ }
 
 let g:lightline = {
   \ 'colorscheme': 'solarized',
@@ -85,14 +89,17 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
-" Files/Directories to ignore
-let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|tmp|swp|zip|DS_Store)$'
-let g:ctrlp_custom_ignore = {
-  \ 'dir' : '\v[\/](node_modules|dist|tmp|vendor|dist)$'
-  \ }
-
 set noswapfile   " Don't create annoying *.swp files
 set laststatus=2 " Always show status bar
+
+" Yank to system clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
 
 " Indent settings
 filetype plugin indent on
