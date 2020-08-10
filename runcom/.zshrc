@@ -81,6 +81,7 @@ source $ZSH/oh-my-zsh.sh
 # fi
 
 # Compilation flags
+export TERM=xterm-256color
 # export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
