@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'flazz/vim-colorschemes'             " All the colors!
 Plugin 'kien/ctrlp.vim'                     " Fuzzy Finder
 Plugin 'itchyny/lightline.vim'              " Vim Status bar
+Plugin 'edkolev/tmuxline.vim'               " Tmux Status bar
 Plugin 'christoomey/vim-tmux-navigator'     " vim/tmux pane navigation
 Plugin 'nathanaelkane/vim-indent-guides'    " Indent Guides
 Plugin 'scrooloose/syntastic'               " Linting
@@ -45,11 +46,16 @@ let g:ctrlp_custom_ignore = {
   \ 'dir' : '\v[\/](node_modules|dist|tmp|vendor|dist)$'
   \ }
 
+let g:xml_syntax_folding = 1
+
+" Lightline settings
+if !has('gui_running')
+  set t_Co=256
+endif
+
 let g:lightline = {
   \ 'colorscheme': 'solarized',
   \ }
-
-let g:xml_syntax_folding = 1
 
 " Syntastic settings
 set statusline+=%#warningmsg#
@@ -71,6 +77,7 @@ let g:syntastic_mode_map = {'mode': 'active'}
 " EditorConfig overrides
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 let g:EditorConfig_disable_rules = ['trim_trailing_whitespace']
+
 
 " Enable syntax for specific filetypes
 augroup filetype
